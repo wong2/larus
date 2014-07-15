@@ -4,6 +4,27 @@ import sys
 import errno
 import socket
 
+def import_app(module_app):
+    splitter = module_app.split(':')
+    if len(splitter) == 1:
+        module_name, app_name = splitter, 'application'
+    else:
+        module_name, app_name = splitter[:2]
+    
+    try:
+        __import__(module_name)
+    except ImportError:
+        raise
+
+    module = sys.modules[module_name]
+    app = getattr(module, app_name, None)
+    if app is None:
+        raise ImportError('Failed to find application object from: %r' % module)
+    if not callable(app):
+        raise ImportError('Application object must be callable')
+    return app
+
+
 
 def create_tcp_socket(addr):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

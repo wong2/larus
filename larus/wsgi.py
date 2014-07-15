@@ -1,10 +1,10 @@
 #-*-coding:utf-8-*-
 
+import utils
 from http_parser.http import HttpStream 
 from http_parser.reader import SocketReader
 from werkzeug.http import http_date
 from . import SERVER_SOFTWARE
-import utils
 
 class Headers(object):
     

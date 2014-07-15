@@ -77,10 +77,8 @@ class Arbiter(object):
         sys.exit(0)
 
     def spawn_worker(self):
-        return Process(target=self.worker_class.create, args=(self.app,
-                                                              self.sockets,
-                                                              self.logger,
-                                                              self.config))
+        args = (self.app, self.sockets, self.logger, self.config)
+        return Process(target=self.worker_class.create, args=args)
 
     def spawn_workers(self):
         diff = self.worker_nums - len(self.workers)

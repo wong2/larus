@@ -11,8 +11,6 @@ except ImportError:
     from distutils.core import setup
 
 
-readme = open('README.md').read()
-
 requirements = open('requirements.txt').read().split('\n')
 
 test_requirements = [
@@ -23,7 +21,7 @@ setup(
     name='larus',
     version='0.1.0',
     description='Larus is a simplified Gunicorn clone',
-    long_description=readme,
+    long_description='A WSGI Server',
     author='wong2',
     author_email='wonderfuly@gmail.com',
     url='https://github.com/wong2/larus',

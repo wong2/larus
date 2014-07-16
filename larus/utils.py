@@ -43,7 +43,6 @@ def import_app(module_app):
     return app
 
 
-
 def create_tcp_socket(addr):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

@@ -11,7 +11,7 @@ except ImportError:
     from distutils.core import setup
 
 
-readme = open('README.rst').read()
+readme = open('README.md').read()
 
 requirements = open('requirements.txt').read().split('\n')
 
@@ -22,7 +22,7 @@ test_requirements = [
 setup(
     name='larus',
     version='0.1.0',
-    description='a wsgi server which should be fast',
+    description='Larus is a simplified Gunicorn clone',
     long_description=readme,
     author='wong2',
     author_email='wonderfuly@gmail.com',

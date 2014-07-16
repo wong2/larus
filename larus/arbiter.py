@@ -42,7 +42,7 @@ class Arbiter(object):
 
     def setup_logger(self):
         logging.basicConfig(level=logging.DEBUG,
-                            format='%(message)s',
+                            format='%(asctime)-15s [%(process)d] [%(levelname)s] %(message)s',
                             handlers=[logging.StreamHandler()])
         self.logger = logging.getLogger(__name__)
 

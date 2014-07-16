@@ -11,17 +11,14 @@ except ImportError:
     from distutils.core import setup
 
 
-requirements = open('requirements.txt').read().split('\n')
-
 test_requirements = [
     # TODO: put package test requirements here
 ]
 
 setup(
     name='larus',
-    version='0.2.0',
+    version='0.2.1',
     description='Larus is a simplified Gunicorn clone',
-    long_description='A WSGI Server',
     author='wong2',
     author_email='wonderfuly@gmail.com',
     url='https://github.com/wong2/larus',
@@ -31,7 +28,10 @@ setup(
     package_dir={'larus':
                  'larus'},
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=[
+        'http-parser',
+        'click',
+    ],
     license="BSD",
     zip_safe=False,
     keywords='larus,gunicorn,wsgi',

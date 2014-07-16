@@ -32,3 +32,10 @@ For example, if `myapp.py` contains wsgi app: `app`, we can serve it with larus 
 with `4` workers and bind to `0.0.0.0:5000`:
 
     larus -w 4 -b 0.0.0.0:5000 myapp:app
+
+### Signals
+
+You can use signals to dynamically increment or decrement the number of workers while serving:
+
+* `TTIN`: Increment the number of workers by one
+* `TTOU`: Decrement the number of workers by one

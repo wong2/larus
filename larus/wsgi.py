@@ -82,7 +82,7 @@ class Response(object):
             chunked = False
         elif self.req.version() <= (1, 0):
             chunked = False
-        elif utils.get_status_code(self.status) in (204, 304):
+        elif utils.get_status_code(self.headers.status) in (204, 304):
             chunked = False
         else:
             chunked = True

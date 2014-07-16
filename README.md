@@ -3,7 +3,7 @@ Larus: A WSGI Server [WIP]
 
 ### Introduction
 
-Larus is a simplified Gunicorn clone, which serves WSGI apps.
+Larus is a simplified Gunicorn clone
 
 ### Install
 
@@ -39,3 +39,7 @@ You can use signals to dynamically increment or decrement the number of workers 
 
 * `TTIN`: Increment the number of workers by one
 * `TTOU`: Decrement the number of workers by one
+
+### TODO
+
+* Add more worker types

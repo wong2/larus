@@ -3,7 +3,7 @@ Larus: A WSGI Server [WIP]
 
 ### Introduction
 
-Larus is a simplified Gunicorn clone, wrote cause I'm boring.
+Larus is a simplified Gunicorn clone, which serves WSGI apps.
 
 ### Install
 

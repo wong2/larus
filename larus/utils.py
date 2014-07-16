@@ -25,7 +25,7 @@ class FileWrapper(object):
 def import_app(module_app):
     splitter = module_app.split(':')
     if len(splitter) == 1:
-        module_name, app_name = splitter, 'application'
+        module_name, app_name = splitter[0], 'application'
     else:
         module_name, app_name = splitter[:2]
     

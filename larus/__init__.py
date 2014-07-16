@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Wang Dapeng'
+__author__ = 'wong2'
 __email__ = 'wonderfuly@gmail.com'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 SERVER_SOFTWARE = 'Larus/%s' % __version__

@@ -19,7 +19,7 @@ test_requirements = [
 
 setup(
     name='larus',
-    version='0.1.0',
+    version='0.2.0',
     description='Larus is a simplified Gunicorn clone',
     long_description='A WSGI Server',
     author='wong2',

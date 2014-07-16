@@ -126,6 +126,7 @@ class Response(object):
 def create(server, client, config):
     client.setblocking(1)
     request = HttpStream(SocketReader(client))
+    body_stream = request.body_file()
     environ = request.wsgi_environ()
 
     ''' 
@@ -138,7 +139,7 @@ def create(server, client, config):
         'SERVER_PORT': str(port),
         'wsgi.version': (1, 0),
         'wsgi.url_scheme': utils.guess_scheme(environ),
-        'wsgi.input': client,
+        'wsgi.input': body_stream,
         'wsgi.multithread': False,
         'wsgi.multiprocess': config['workers'] > 1,
         'wsgi.run_once': False,

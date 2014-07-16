@@ -3,8 +3,8 @@
 import errno
 import select
 import socket
-from larus.workers.base import BaseWorker
 from larus import wsgi
+from larus.workers.base import BaseWorker
 
 
 class SyncWorker(BaseWorker):

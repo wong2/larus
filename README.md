@@ -1,4 +1,4 @@
-Larus: A WSGI Server [WIP]
+Larus: A WSGI HTTP Server [WIP]
 --------------------------
 
 ### Introduction

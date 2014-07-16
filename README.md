@@ -40,6 +40,13 @@ You can use signals to dynamically increment or decrement the number of workers 
 * `TTIN`: Increment the number of workers by one
 * `TTOU`: Decrement the number of workers by one
 
+### Performance
+
+In my simple benchmark using `ab`, Larus performs better than Gunicorn both running 4 sync workers.
+Perhaps benefits from the C http parser Larus using.
+
+TODO: add detailed comparison.
+
 ### TODO
 
 * Add more worker types

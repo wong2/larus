@@ -1,4 +1,4 @@
-Larus
+Larus: A WSGI Server
 ----------------
 
 ### Introduction
@@ -7,7 +7,13 @@ Larus is a simplified Gunicorn clone, I wrote this cause I'm boring.
 
 ### Install
 
-`pip intsall larus`
+From PyPI:
+
+    $ pip intsall larus
+
+From source:
+
+    $ python setup.py install
 
 ### Usage
 

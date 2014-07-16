@@ -11,22 +11,19 @@ except ImportError:
     from distutils.core import setup
 
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
-
 setup(
     name='larus',
-    version='0.2.1',
+    version='0.2.2',
     description='Larus is a simplified Gunicorn clone',
     author='wong2',
     author_email='wonderfuly@gmail.com',
     url='https://github.com/wong2/larus',
     packages=[
         'larus',
+        'larus.scripts',
+        'larus.workers',
     ],
-    package_dir={'larus':
-                 'larus'},
+    package_dir={'larus': 'larus'},
     include_package_data=True,
     install_requires=[
         'http-parser',
@@ -43,8 +40,6 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ],
-    test_suite='tests',
-    tests_require=test_requirements,
     entry_points={
         'console_scripts': [
             'larus=larus.scripts.manage:main',

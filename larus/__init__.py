@@ -2,5 +2,5 @@
 
 __author__ = 'wong2'
 __email__ = 'wonderfuly@gmail.com'
-__version__ = '0.2.1'
+__version__ = '0.2.2'
 SERVER_SOFTWARE = 'Larus/%s' % __version__

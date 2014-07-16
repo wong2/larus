@@ -1,5 +1,5 @@
-Larus: A WSGI Server
-----------------
+Larus: A WSGI Server [WIP]
+--------------------------
 
 ### Introduction
 
@@ -25,7 +25,7 @@ From source:
       -c, --chdir TEXT       change the working director
       --help                 Show this message and exit.
 
-For example, if `myapp.py` contains wsgi app: `app`, we can serve it with larus with:
+For example, if `myapp.py` contains the wsgi app `app`, we can serve it with larus with:
 
     larus myapp:app
 

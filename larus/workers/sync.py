@@ -10,9 +10,7 @@ from larus import wsgi
 class SyncWorker(BaseWorker):
 
     def run(self):
-
         [sock.setblocking(0) for sock in self.sockets]
-
         while True:
             readables, _, _ = select.select(self.sockets, [], [], self.timeout)
             for sock in readables:

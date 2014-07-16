@@ -9,8 +9,8 @@ from larus.utils import import_app
 
 #TODO: add worker class option
 @click.command()
-@click.option('--workers', '-w', default=1, help='number of workers')
-@click.option('--bind', '-b', multiple=True, default=(), help='address to bind: host:port, defaults: 127.0.0.1:8000')
+@click.option('--workers', '-w', default=1, help='number of workers, defaults to 1')
+@click.option('--bind', '-b', multiple=True, default=(), help='address to bind: host:port, defaults to 127.0.0.1:8000')
 @click.option('--chdir', '-c', default='.', help='change the working director')
 @click.argument('module_app')
 def main(workers, bind, chdir, module_app):

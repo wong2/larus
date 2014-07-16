@@ -3,6 +3,7 @@
 import errno
 import select
 import socket
+from http_parser.http import NoMoreData
 from larus import wsgi
 from larus.workers.base import BaseWorker
 
@@ -26,7 +27,11 @@ class SyncWorker(BaseWorker):
                     self.handle(sock, client, addr)
 
     def handle(self, server, client, addr):
-        environ, response = wsgi.create(server, client, self.config)
+        try:
+            environ, response = wsgi.create(server, client, self.config)
+        except NoMoreData:
+            client.close()
+
         result = self.app(environ, response.start_response)
         try:
             for data in result:

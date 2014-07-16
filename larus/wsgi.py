@@ -1,7 +1,7 @@
 #-*-coding:utf-8-*-
 
 import utils
-from http_parser.http import HttpStream 
+from http_parser.http import HttpStream
 from http_parser.reader import SocketReader
 from . import SERVER_SOFTWARE
 

@@ -9,7 +9,7 @@ Larus is a simplified Gunicorn clone, wrote cause I'm boring.
 
 From PyPI:
 
-    $ pip intsall larus
+    $ pip install larus
 
 From source:
 

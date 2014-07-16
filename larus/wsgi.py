@@ -3,7 +3,6 @@
 import utils
 from http_parser.http import HttpStream 
 from http_parser.reader import SocketReader
-from werkzeug.http import http_date
 from . import SERVER_SOFTWARE
 
 class Headers(object):
@@ -21,7 +20,7 @@ class Headers(object):
         default_headers = [
             'HTTP/%s.%s %s' % (version[0], version[1], self.status),
             'Server: %s' % SERVER_SOFTWARE,
-            'Date: %s' % http_date(),
+            'Date: %s' % utils.http_date(),
             'Connection: %s' % connection,
         ]
         return default_headers

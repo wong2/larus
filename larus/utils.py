@@ -1,8 +1,26 @@
 #-*-coding:utf-8-*-
 
 import sys
+import time
 import errno
 import socket
+from email.utils import formatdate
+
+
+class FileWrapper(object):
+
+    def __init__(self, filelike, blksize=8192):
+        self.filelike = filelike
+        self.blksize = blksize
+        if hasattr(filelike, 'close'):
+            self.close = filelike.close
+
+    def __getitem__(self, key):
+        data = self.filelike.read(self.blksize)
+        if data:
+            return data
+        raise IndexError
+
 
 def import_app(module_app):
     splitter = module_app.split(':')
@@ -87,16 +105,7 @@ def is_hoppish(name):
     return name.lower().strip() in hop_headers
 
 
-class FileWrapper(object):
-
-    def __init__(self, filelike, blksize=8192):
-        self.filelike = filelike
-        self.blksize = blksize
-        if hasattr(filelike, 'close'):
-            self.close = filelike.close
-
-    def __getitem__(self, key):
-        data = self.filelike.read(self.blksize)
-        if data:
-            return data
-        raise IndexError
+def http_date(timestamp=None):
+    if timestamp is None:
+        timestamp = time.time()
+    return formatdate(timestamp, localtime=False, usegmt=True)

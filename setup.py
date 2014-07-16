@@ -13,7 +13,7 @@ except ImportError:
 
 setup(
     name='larus',
-    version='0.2.2',
+    version='0.2.3',
     description='Larus is a simplified Gunicorn clone',
     author='wong2',
     author_email='wonderfuly@gmail.com',

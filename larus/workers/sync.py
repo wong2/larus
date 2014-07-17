@@ -32,14 +32,15 @@ class SyncWorker(BaseWorker):
         except NoMoreData:
             client.close()
 
-        result = self.app(environ, response.start_response)
+        result = None
         try:
+            result = self.app(environ, response.start_response)
             for data in result:
                 response.send_data(data)
-            response.close()
         except Exception as e:
             raise e
         finally:
+            response.close()
             client.close()
             if hasattr(result, 'close'):
                 result.close()

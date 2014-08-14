@@ -3,7 +3,7 @@
 import utils
 from http_parser.http import HttpStream
 from http_parser.reader import SocketReader
-from . import SERVER_SOFTWARE
+from larus import SERVER_SOFTWARE
 
 class Headers(object):
     

@@ -6,8 +6,8 @@ import signal
 import logging
 from multiprocessing import Process
 from multiprocessing.queues import SimpleQueue
-from utils import create_sockets, format_addr_str
-from workers.sync import SyncWorker
+from larus.utils import create_sockets, format_addr_str
+from larus.workers.sync import SyncWorker
 
 
 class Arbiter(object):
